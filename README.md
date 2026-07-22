@@ -1,6 +1,6 @@
 ## austria-gip-decoder
 
-Decodes access permissions from Austria GIP (Geographisches Informationssystem) road network datase
+Decodes access permissions from Austria GIP (Geographisches Informationssystem) road network dataset
 
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)
