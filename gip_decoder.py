@@ -7,7 +7,7 @@ import pandas as pd
 import geopandas as gpd
 
 
-# URLs und Pfade definieren
+#Define URLs and paths
 url = "https://open.gip.gv.at/ogd/B_gip_network_ogd.zip"  
 zipname = "gip_network_ogd.zip"
 
@@ -95,7 +95,7 @@ print("\n--- Calculate bitmask ---")
 ### Read extracted shapefile 
 gip_link = gpd.read_file("LINK.gpkg", layer="LINK")
 
-# Convert access_tow and access_bkw to integer (nullable Int64 to support NaN values)
+#Convert access_tow and access_bkw to integer (nullable Int64 to support NaN values)
 gip_link['access_tow'] = gip_link['access_tow'].astype('Int64')
 gip_link['access_bkw'] = gip_link['access_bkw'].astype('Int64')
 
@@ -109,7 +109,7 @@ gip_link['access_bkw'] = gip_link['access_bkw'].astype('Int64')
 #  'owner', 'oneway_car', 'oneway_ped', 'oneway_bik', 'oneway_bus', 'geometry']
 
 
-# Function to convert integer to 22-bit binary string
+#Function to convert integer to 22-bit binary string
 def convert_to_bitmask(value):
     # Handle NaN/NA values
     if pd.isna(value):
@@ -124,14 +124,14 @@ def convert_to_bitmask(value):
     return binary.zfill(22)
 
 
-# Convert access_tow to bitmask
+#Convert access_tow to bitmask
 gip_link['bit_tow'] = gip_link['access_tow'].apply(convert_to_bitmask)
 
-# Convert access_bkw to bitmask
+#Convert access_bkw to bitmask
 gip_link['bit_bkw'] = gip_link['access_bkw'].apply(convert_to_bitmask)
 
 
-# Split bits for TOW (direction)
+#Split bits for TOW (direction)
 bit_labels = ['garbage_tow', 'hazard_tow', 'comb_tow', 'camper_tow', 'cferry_tow', 
               'crailway_tow', 'rrailway_tow', 'mcycle_tow', 'trolly_tow', 'coach_tow',
               'truck16_tow', 'taxi_tow', 'truck75_tow', 'truck35_tow', 'ferry_tow',
@@ -142,7 +142,7 @@ for i, label in enumerate(bit_labels):
     gip_link[label] = gip_link['bit_tow'].str[i]
 
 
-# Split bits for BKW (backward direction)
+#Split bits for BKW (backward direction)
 bit_labels_bkw = ['garbage_bkw', 'hazard_bkw', 'comb_bkw', 'camper_bkw', 'cferry_bkw',
                   'crailway_bkw', 'rrailway_bkw', 'mcycle_bkw', 'trolly_bkw', 'coach_bkw',
                   'truck16_bkw', 'taxi_bkw', 'truck75_bkw', 'truck35_bkw', 'ferry_bkw',
@@ -154,7 +154,7 @@ for i, label in enumerate(bit_labels_bkw):
 
 print("Bitmask conversion completed")
 
-# Save the modified GeoDataFrame as LINK.gpkg
+#Save the modified GeoDataFrame as LINK.gpkg
 output_file = "LINK.gpkg"
 if os.path.exists(output_file):
     os.remove(output_file)
