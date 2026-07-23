@@ -41,19 +41,6 @@ This project creates from the decimal values of the attributes "ACCESS_TOW" and 
 - GDAL/OGR libraries (for GeoPackage support)
 - RAM: 8-16 GB (for full dataset processing)
 
-### Python Dependencies
-```bash
-pip install pandas geopandas requests
-```
-
-Or individually:
-```bash
-pip install pandas
-pip install geopandas
-pip install requests
-```
-
-
 ## Installation
 
 1. **Clone the repository:**
