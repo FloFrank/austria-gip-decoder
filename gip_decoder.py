@@ -99,14 +99,6 @@ gip_link = gpd.read_file("LINK.gpkg", layer="LINK")
 gip_link['access_tow'] = gip_link['access_tow'].astype('Int64')
 gip_link['access_bkw'] = gip_link['access_bkw'].astype('Int64')
 
-# List columns
-#print(gip_link.columns.tolist())
-#>>> print(gip_link.columns.tolist())
-#['object_id', 'short_id', 'node_from_', 'node_fro_1', 'node_to_id', 'node_to_sh', 'edge_id', 'edge_short', 'name_text_', 
-# 'short_name', 'name_tex_1', 'speed_tow_', 'speed_bkw_', 'maxspeed_t', 'maxspeed_b', 'access_tow', 'access_bkw', 'length', 
-# 'functional', 'lanes_tow_', 'lanes_to_1', 'lanes_bkw_', 'lanes_bk_1', 'form_of_wa', 'abutter_ca', 'urban', 'level_inte', 
-# 'constructi', 'toll', 'subnet', 'edge_categ', 'sustainer', 'regional_c', 'connector', 'max_width', 'max_height', 'max_weight',
-#  'owner', 'oneway_car', 'oneway_ped', 'oneway_bik', 'oneway_bus', 'geometry']
 
 
 #Function to convert integer to 22-bit binary string
