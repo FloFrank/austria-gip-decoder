@@ -1,4 +1,4 @@
-## austria-gip-decoder
+## gip-access-bitmask
 
 Decodes access permissions from Austria GIP (Graphenintegrations-Plattform) road network dataset
 
