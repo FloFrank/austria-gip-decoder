@@ -55,7 +55,7 @@ python -m venv venv
 source venv/bin/activate  
 ```
 
-3. **Install dependencies:**
+3. **Install dependencies**
 
 
 4. **Run the decoder:**
