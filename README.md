@@ -39,7 +39,7 @@ This project creates from the decimal values of the attributes "ACCESS_TOW" and 
 ## Requirements
 - Python 3.8 or higher
 - GDAL/OGR libraries (for GeoPackage support)
-- RAM: 8-16 GB (for full dataset processing)
+
 
 ## Installation
 
@@ -52,13 +52,11 @@ cd austria-gip-decoder
 2. **Create a virtual environment (optional but recommended):**
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  
 ```
 
 3. **Install dependencies:**
-```bash
-pip install pandas geopandas requests
-```
+
 
 4. **Run the decoder:**
 ```bash
